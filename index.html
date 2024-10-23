@@ -1,84 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Alexander H. Mortensen - A creative developer & designer, specializing in programming, server administration, and nature exploration. Known for innovative digital experiences and entrepreneurial mindset.">
-        <meta name="keywords" content="Alexander H. Mortensen, Alexander Holm, Web Developer, Creative Developer, Full Stack Developer, Nature Enthusiast, Designer, Programming, Server Administration, IT, Ballerup TEC, GTA Community">
-        <meta name="author" content="Alexander H. Mortensen">
-        
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Alexander H. Mortensen - Creative Developer & Designer">
-        <meta property="og:description" content="Learn about Alexander H. Mortensen, a programmer, server admin, and nature enthusiast. Combining technology and design to create modern digital experiences.">
-        <meta property="og:image" content="https://alexander-holm.com/images/og-image.jpg">
-        <meta property="og:url" content="https://alexander-holm.com">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="en_US">
-        <meta property="og:site_name" content="Alexander H. Mortensen Portfolio">
-    
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Alexander H. Mortensen - Creative Developer & Designer">
-        <meta name="twitter:description" content="Explore the work and projects of Alexander H. Mortensen. Combining technology with a passion for nature.">
-        <meta name="twitter:image" content="https://alexander-holm.com/images/twitter-image.jpg">
-        <meta name="twitter:site" content="@yourTwitterHandle">
-    
-        <!-- Favicon -->
-        <link rel="icon" href="https://alexander-holm.com/favicon.ico" type="image/x-icon">
-    
-        <!-- Canonical URL -->
-        <link rel="canonical" href="https://alexander-holm.com">
-    
-        <!-- External Stylesheets -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://alexander-holm.com/css/style.css"> <!-- Link to external style.css -->
-    
-        <!-- Preload Fonts for Performance -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-        <!-- Tailwind CSS (deferred for better performance) -->
-        <script src="https://cdn.tailwindcss.com" defer></script>
-    
-        <!-- GSAP for Animations -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    
-        <!-- Custom Script Link -->
-        <script src="https://alexander-holm.com/js/script.js" defer></script> <!-- Link to external script.js -->
-    
-        <!-- Schema.org Markup for Person -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Alexander H. Mortensen",
-          "alternateName": "Alexander Holm",
-          "url": "https://alexander-holm.com",
-          "image": "https://alexander-holm.com/images/profile.jpg",
-          "jobTitle": "Creative Developer & Designer",
-          "description": "Alexander H. Mortensen is a creative developer, programmer, and nature enthusiast with a focus on server administration, IT, and digital innovation.",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Freelancer"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/in/alexanderholm",
-            "https://www.instagram.com/alexanderholmm/",
-            "https://github.com/alexanderholm",
-            "https://twitter.com/alexanderholm"
-          ],
-          "birthPlace": "Denmark",
-          "birthDate": "2008-01-01"
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander H. Mortensen - Creative Developer, Designer & Nature Enthusiast</title>
+    <meta name="description" content="Alexander H. Mortensen - A creative developer & designer, specializing in programming, server administration, and nature exploration. Known for innovative digital experiences and entrepreneurial mindset.">
+    <meta name="keywords" content="Alexander H. Mortensen, Alexander Holm, Web Developer, Creative Developer, Full Stack Developer, Nature Enthusiast, Designer, Programming, Server Administration, IT, Ballerup TEC, GTA Community">
+    <meta name="author" content="Alexander H. Mortensen">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Alexander H. Mortensen - Creative Developer & Designer">
+    <meta property="og:description" content="Learn about Alexander H. Mortensen, a programmer, server admin, and nature enthusiast. Combining technology and design to create modern digital experiences.">
+    <meta property="og:image" content="https://alexander-holm.com/images/og-image.jpg">
+    <meta property="og:url" content="https://alexander-holm.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Alexander H. Mortensen Portfolio">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alexander H. Mortensen - Creative Developer & Designer">
+    <meta name="twitter:description" content="Explore the work and projects of Alexander H. Mortensen. Combining technology with a passion for nature.">
+    <meta name="twitter:image" content="https://alexander-holm.com/images/twitter-image.jpg">
+    <meta name="twitter:site" content="@yourTwitterHandle">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://alexander-holm.com/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexander-holm.com">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in forwards',
+                        'slide-in': 'slideIn 1s ease-out forwards',
+                        'bounce': 'bounce 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
         }
-        </script>
-    
-        <!-- Title -->
-        <title>Alexander H. Mortensen - Creative Developer, Designer & Nature Enthusiast</title>
-    </head>
-        
-<body class="bg-gray-900 text-white font-sans">
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer integrity="sha384-..." crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer integrity="sha384-..." crossorigin="anonymous"></script>
+
+    <!-- Schema.org Markup for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexander H. Mortensen",
+      "alternateName": "Alexander Holm",
+      "url": "https://alexander-holm.com",
+      "image": "https://alexander-holm.com/images/profile.jpg",
+      "jobTitle": "Creative Developer & Designer",
+      "description": "Alexander H. Mortensen is a creative developer, programmer, and nature enthusiast with a focus on server administration, IT, and digital innovation.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/alexanderholm",
+        "https://www.instagram.com/alexanderholmm/",
+        "https://github.com/alexanderholm",
+        "https://twitter.com/alexanderholm"
+      ],
+      "birthPlace": "Denmark",
+      "birthDate": "2008-01-01"
+    }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1F2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .loader {
+            border: 8px solid #3B82F6;
+            border-top: 8px solid transparent;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Dark Mode Toggle */
+        .toggle-checkbox:checked + .toggle-label .toggle-circle {
+            transform: translateX(1.5rem);
+            background-color: #FBBF24;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #scrollTopBtn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Additional Animations */
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans antialiased overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-lg border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,15 +165,27 @@
                 <a href="#hero" class="text-2xl font-bold gradient-text">AHM</a>
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-base hover:text-blue-400 transition-colors">About</a>
-                    <a href="#work" class="text-base hover:text-blue-400 transition-colors">Work</a>
-                    <a href="#skills" class="text-base hover:text-blue-400 transition-colors">Skills</a>
-                    <a href="#contact" class="text-base hover:text-blue-400 transition-colors">Contact</a>
+                    <a href="#about" class="text-base hover:text-primary transition-colors">About</a>
+                    <a href="#work" class="text-base hover:text-primary transition-colors">Work</a>
+                    <a href="#skills" class="text-base hover:text-primary transition-colors">Skills</a>
+                    <a href="#testimonials" class="text-base hover:text-primary transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-base hover:text-primary transition-colors">Contact</a>
+                    <!-- Dark Mode Toggle -->
+                    <div class="flex items-center">
+                        <input type="checkbox" id="toggle" class="hidden toggle-checkbox">
+                        <label for="toggle" class="flex items-center cursor-pointer toggle-label">
+                            <div class="relative">
+                                <div class="block w-12 h-6 bg-gray-600 rounded-full shadow-inner"></div>
+                                <div class="absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0 toggle-circle transition-transform"></div>
+                            </div>
+                        </label>
+                    </div>
                 </div>
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" onclick="toggleMenu()" aria-label="Toggle mobile menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <button id="menu-button" class="md:hidden p-2 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -102,76 +193,90 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 border-b border-white/10">
             <div class="px-4 py-4 space-y-3">
-                <a href="#about" class="block text-base hover:text-blue-400 transition-colors">About</a>
-                <a href="#work" class="block text-base hover:text-blue-400 transition-colors">Work</a>
-                <a href="#skills" class="block text-base hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#contact" class="block text-base hover:text-blue-400 transition-colors">Contact</a>
+                <a href="#about" class="block text-base hover:text-primary transition-colors">About</a>
+                <a href="#work" class="block text-base hover:text-primary transition-colors">Work</a>
+                <a href="#skills" class="block text-base hover:text-primary transition-colors">Skills</a>
+                <a href="#testimonials" class="block text-base hover:text-primary transition-colors">Testimonials</a>
+                <a href="#contact" class="block text-base hover:text-primary transition-colors">Contact</a>
+                <!-- Dark Mode Toggle -->
+                <div class="flex items-center">
+                    <input type="checkbox" id="toggle-mobile" class="hidden toggle-checkbox">
+                    <label for="toggle-mobile" class="flex items-center cursor-pointer toggle-label">
+                        <div class="relative">
+                            <div class="block w-12 h-6 bg-gray-600 rounded-full shadow-inner"></div>
+                            <div class="absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0 toggle-circle transition-transform"></div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
     </nav>
-    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center pt-16 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
                     <div class="space-y-4">
-                        <h2 class="text-blue-400 text-2xl fade-in">Welcome to my portfolio</h2>
-                        <h1 class="text-6xl md:text-8xl font-bold leading-tight fade-in">
+                        <h2 class="text-primary text-2xl animate-fade-in">Welcome to my portfolio</h2>
+                        <h1 class="text-6xl md:text-8xl font-bold leading-tight animate-slide-in">
                             Creative
                             <span class="gradient-text">Developer</span>
                             & Designer
                         </h1>
-                        <p class="text-2xl text-gray-400 fade-in">
+                        <p class="text-2xl text-gray-400 animate-fade-in">
                             Crafting digital experiences that combine innovative design with clean, efficient code.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-4 fade-in">
-                        <a href="#contact" class="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 transition-all hover:scale-110">
+                    <div class="flex flex-wrap gap-4 animate-fade-in">
+                        <a href="#contact" class="px-8 py-4 rounded-full bg-primary hover:bg-blue-700 transition-all transform hover:scale-110">
                             Get in Touch
                         </a>
-                        <a href="#work" class="px-8 py-4 rounded-full border border-white/20 hover:border-blue-400 transition-all hover:scale-110">
+                        <a href="#work" class="px-8 py-4 rounded-full border border-white/20 hover:border-primary transition-all transform hover:scale-110">
                             View Work
                         </a>
                     </div>
-                    <div class="flex items-center gap-6 pt-8 fade-in">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+                    <div class="flex items-center gap-6 pt-8 animate-fade-in">
+                        <a href="https://github.com/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                             <i class="fab fa-linkedin text-2xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+                        <a href="https://twitter.com/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
                             <i class="fab fa-twitter text-2xl"></i>
                         </a>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="floating relative z-10">
-                        <img src="https://avatars.githubusercontent.com/u/163738985?s=400&u=c2a118b703b5b97d5276b0a1bca6327c530ad763&v=4" alt="Profile" class="rounded-3xl shadow-lg">
+                    <div class="floating relative z-10 animate-bounce-slow">
+                        <img src="https://alexander-holm.com/images/profile.jpg" alt="Alexander H. Mortensen" class="rounded-3xl shadow-lg w-full">
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-3xl opacity-30 -z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-50 -z-10"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Divider -->
     <div class="divider"></div>
+
     <!-- About Section -->
     <section id="about" class="py-32 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="space-y-8 mb-16 text-center">
-                <h2 class="text-5xl md:text-6xl font-bold gradient-text">About Me</h2>
-                <p class="text-xl text-gray-400">A passionate developer and designer with a knack for building intuitive user experiences.</p>
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text animate-fade-in">About Me</h2>
+                <p class="text-xl text-gray-400 animate-fade-in">A passionate developer and designer with a knack for building intuitive user experiences.</p>
             </div>
             <div class="flex flex-col md:flex-row md:gap-16 items-center">
                 <div class="relative mb-8 md:mb-0 md:w-1/2 hanging">
                     <div class="snor"></div>
                     <div class="relative z-10">
-                        <img src="https://avatars.githubusercontent.com/u/163738985?s=400&u=c2a118b703b5b97d5276b0a1bca6327c530ad763&v=4" alt="About Me" class="rounded-3xl shadow-lg w-full">
+                        <img src="https://alexander-holm.com/images/about-me.jpg" alt="Alexander H. Mortensen" class="rounded-3xl shadow-lg w-full animate-fade-in">
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-3xl opacity-30 -z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-50 -z-10"></div>
                 </div>
-                <div class="md:w-1/2 text-lg text-gray-300 leading-relaxed space-y-6">
+                <div class="md:w-1/2 text-lg text-gray-300 leading-relaxed space-y-6 animate-fade-in">
                     <p>Hi, I'm Alexander H. Mortensen, a creative developer with a passion for turning ideas into reality through code. My journey in web development began at an early age, and I've been honing my skills ever since. I specialize in crafting modern and interactive web applications that provide users with meaningful experiences.</p>
                     <p>My expertise lies in both frontend and backend development, enabling me to create full-stack solutions that are not only visually appealing but also highly functional. I enjoy working with the latest technologies and am always eager to learn and adapt to new trends. Whether it's designing elegant user interfaces or building scalable server-side systems, I thrive on pushing the boundaries of what's possible.</p>
                     <div id="additional-content" class="hidden">
@@ -179,98 +284,146 @@
                         <p>Outside of coding, I love collaborating with other creative individuals, sharing ideas, and taking on new challenges that test my skills. I am enthusiastic about exploring artificial intelligence, automation, and other areas that can push the web to new heights.</p>
                     </div>
                     <div class="flex flex-wrap gap-4">
-                        <button id="read-more-btn" onclick="toggleReadMore()" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-all">Read More</button>
-                        <a href="resume.pdf" target="_blank" class="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:opacity-90 transition-all">Download Resume</a>
+                        <button id="read-more-btn" class="px-6 py-3 rounded-full bg-primary hover:bg-blue-700 transition-all">Read More</button>
+                        <a href="https://alexander-holm.com/resume.pdf" target="_blank" class="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:opacity-90 transition-all">Download Resume</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Divider -->
     <div class="divider"></div>
+
     <!-- Work Section -->
     <section id="work" class="py-32 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="space-y-4 mb-16 text-center">
-                <h2 class="text-5xl md:text-6xl font-bold gradient-text">Featured Projects</h2>
-                <p class="text-xl text-gray-400">Some of my best work from recent years</p>
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text animate-fade-in">Featured Projects</h2>
+                <p class="text-xl text-gray-400 animate-fade-in">Some of my best work from recent years</p>
             </div>
             <div class="grid md:grid-cols-2 gap-16">
                 <!-- Project Card 1 -->
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <img src="/api/placeholder/600/400" alt="AI Dashboard Project" class="w-full rounded-3xl mb-6 transition-transform group-hover:scale-105">
-                    <h3 class="text-3xl font-bold mb-4">AI Dashboard</h3>
-                    <p class="text-lg text-gray-300 mb-6">A comprehensive analytics platform powered by machine learning</p>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <div class="relative overflow-hidden rounded-3xl">
+                        <img src="https://alexander-holm.com/images/project1.jpg" alt="AI Dashboard Project" class="w-full transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
+                    </div>
+                    <h3 class="text-3xl font-bold mt-6 mb-4">AI Dashboard</h3>
+                    <p class="text-lg text-gray-300 mb-6">A comprehensive analytics platform powered by machine learning.</p>
                     <div class="flex gap-4">
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">React</span>
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">Python</span>
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">TensorFlow</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">React</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">Python</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">TensorFlow</span>
                     </div>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <img src="/api/placeholder/600/400" alt="E-Commerce Platform Project" class="w-full rounded-3xl mb-6 transition-transform group-hover:scale-105">
-                    <h3 class="text-3xl font-bold mb-4">E-Commerce Platform</h3>
-                    <p class="text-lg text-gray-300 mb-6">A scalable online shopping solution with real-time inventory</p>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <div class="relative overflow-hidden rounded-3xl">
+                        <img src="https://alexander-holm.com/images/project2.jpg" alt="E-Commerce Platform Project" class="w-full transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
+                    </div>
+                    <h3 class="text-3xl font-bold mt-6 mb-4">E-Commerce Platform</h3>
+                    <p class="text-lg text-gray-300 mb-6">A scalable online shopping solution with real-time inventory.</p>
                     <div class="flex gap-4">
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">Next.js</span>
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">Node.js</span>
-                        <span class="px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm">MongoDB</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">Next.js</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">Node.js</span>
+                        <span class="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">MongoDB</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Divider -->
     <div class="divider"></div>
+
     <!-- Skills Section -->
     <section id="skills" class="py-32 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="space-y-4 mb-16 text-center">
-                <h2 class="text-5xl md:text-6xl font-bold gradient-text">Skills & Expertise</h2>
-                <p class="text-xl text-gray-400">Technologies I work with</p>
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text animate-fade-in">Skills & Expertise</h2>
+                <p class="text-xl text-gray-400 animate-fade-in">Technologies I work with</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
                 <!-- Skill Card -->
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <i class="fas fa-code text-4xl text-blue-400 mb-4"></i>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <i class="fas fa-code text-4xl text-primary mb-4"></i>
                     <h3 class="text-2xl font-bold mb-2">Frontend</h3>
                     <p class="text-lg text-gray-400">React, Vue, Angular</p>
                 </div>
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <i class="fas fa-server text-4xl text-blue-400 mb-4"></i>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <i class="fas fa-server text-4xl text-primary mb-4"></i>
                     <h3 class="text-2xl font-bold mb-2">Backend</h3>
                     <p class="text-lg text-gray-400">Node.js, Python, Java</p>
                 </div>
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <i class="fas fa-database text-4xl text-primary mb-4"></i>
                     <h3 class="text-2xl font-bold mb-2">Database</h3>
                     <p class="text-lg text-gray-400">MongoDB, PostgreSQL</p>
                 </div>
-                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg">
-                    <i class="fas fa-cloud text-4xl text-blue-400 mb-4"></i>
+                <div class="group p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <i class="fas fa-cloud text-4xl text-primary mb-4"></i>
                     <h3 class="text-2xl font-bold mb-2">Cloud</h3>
                     <p class="text-lg text-gray-400">AWS, Google Cloud</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Scroll to Top Button -->
-    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-32 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-4 mb-16 text-center">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text animate-fade-in">Testimonials</h2>
+                <p class="text-xl text-gray-400 animate-fade-in">What clients say about me</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Testimonial 1 -->
+                <div class="p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://alexander-holm.com/images/client1.jpg" alt="Client 1" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="text-xl font-bold">John Doe</h3>
+                            <p class="text-gray-400">CEO, Tech Company</p>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-300">"Alexander delivered exceptional work on our project. His attention to detail and expertise in development were outstanding."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="p-8 rounded-3xl bg-gray-700 hover:bg-gray-600 transition-colors shadow-lg animate-fade-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://alexander-holm.com/images/client2.jpg" alt="Client 2" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Jane Smith</h3>
+                            <p class="text-gray-400">Project Manager, Creative Agency</p>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-300">"Working with Alexander was a pleasure. He brought innovative ideas to the table and executed them flawlessly."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Contact Section -->
     <section id="contact" class="py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-5xl md:text-6xl font-bold mb-8 gradient-text">Let's Create Something Amazing Together</h2>
-                    <p class="text-xl text-gray-400 mb-8">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8 gradient-text animate-fade-in">Let's Create Something Amazing Together</h2>
+                    <p class="text-xl text-gray-400 mb-8 animate-fade-in">
                         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
                     </p>
-                    <div class="space-y-4">
-                        <a href="mailto:contact@example.com" class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors" aria-label="Email">
+                    <div class="space-y-4 animate-fade-in">
+                        <a href="mailto:contact@alexander-holm.com" class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors" aria-label="Email">
                             <i class="fas fa-envelope text-2xl"></i>
-                            contact@example.com
+                            contact@alexander-holm.com
                         </a>
                         <a href="tel:+1234567890" class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors" aria-label="Phone">
                             <i class="fas fa-phone text-2xl"></i>
@@ -278,77 +431,130 @@
                         </a>
                     </div>
                 </div>
-                <form class="space-y-6">
+                <form class="space-y-6 animate-fade-in" action="https://alexander-holm.com/contact" method="POST">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium mb-2">Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-colors">
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-primary focus:ring-primary outline-none transition-colors">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-colors">
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-primary focus:ring-primary outline-none transition-colors">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Subject</label>
-                        <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-colors">
+                        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-primary focus:ring-primary outline-none transition-colors">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Message</label>
-                        <textarea rows="6" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 outline-none transition-colors"></textarea>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-white/10 focus:border-primary focus:ring-primary outline-none transition-colors"></textarea>
                     </div>
-                    <button class="w-full px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors">
+                    <button type="submit" class="w-full px-8 py-4 rounded-lg bg-primary hover:bg-blue-700 transition-colors">
                         Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="py-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <p class="text-gray-400">&copy; 2023 Alexander H. Mortensen. All rights reserved.</p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://github.com/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
                         <i class="fab fa-github text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                         <i class="fab fa-linkedin text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://twitter.com/alexanderholm" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
                         <i class="fab fa-twitter text-2xl"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top" class="fixed bottom-8 right-8 bg-primary text-white p-4 rounded-full shadow-lg transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
     <script>
-        function toggleReadMore() {
-            const additionalContent = document.getElementById("additional-content");
-            const readMoreBtn = document.getElementById("read-more-btn");
-            if (additionalContent.classList.contains("hidden")) {
-                additionalContent.classList.remove("hidden");
-                readMoreBtn.textContent = "Show Less";
+        // Preloader
+        window.addEventListener('load', function () {
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // Dark Mode Toggle
+        const toggleSwitches = document.querySelectorAll('.toggle-checkbox');
+        toggleSwitches.forEach(toggleSwitch => {
+            toggleSwitch.addEventListener('change', () => {
+                document.body.classList.toggle('bg-gray-100');
+                document.body.classList.toggle('text-gray-900');
+                document.querySelectorAll('.bg-gray-900, .bg-gray-800, .bg-gray-700').forEach(element => {
+                    element.classList.toggle('bg-white');
+                });
+                document.querySelectorAll('.text-white').forEach(element => {
+                    element.classList.toggle('text-gray-900');
+                });
+            });
+        });
+
+        // Toggle Mobile Menu
+        document.getElementById('menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle Read More Content
+        document.getElementById('read-more-btn').addEventListener('click', function () {
+            const additionalContent = document.getElementById('additional-content');
+            if (additionalContent.classList.contains('hidden')) {
+                additionalContent.classList.remove('hidden');
+                this.textContent = 'Show Less';
             } else {
-                additionalContent.classList.add("hidden");
-                readMoreBtn.textContent = "Read More";
-            }
-        }
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        window.addEventListener("scroll", () => {
-            const scrollTopBtn = document.getElementById("scrollTopBtn");
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add("show");
-            } else {
-                scrollTopBtn.classList.remove("show");
+                additionalContent.classList.add('hidden');
+                this.textContent = 'Read More';
             }
         });
-        function scrollToSection(sectionId) {
-            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.utils.toArray('.animate-fade-in').forEach(element => {
+                gsap.from(element, {
+                    opacity: 0,
+                    duration: 1,
+                    y: 50,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 80%',
+                    },
+                });
+            });
+        });
     </script>
 </body>
 </html>
